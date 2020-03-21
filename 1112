@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Список покупок</h1>
+        <input type="text" v-model="product" @keyup.enter="addTelega()">
+        <ul>
+            <li v-for="product in telega">{{ product }}</li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: '',
+                telega: []
+            },
+            methods: {
+                addTelega: function() {
+                    this.telega.push(this.product)
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
